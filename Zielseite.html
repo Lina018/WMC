@@ -1,62 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+*<!DOCTYPE html>
+<html lang="de">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formular</title>
 </head>
 <body>
+    <h1>Mein Formular</h1>
+    <p>Felder mit * sind Pflichtfelder.</p>
 
-    
+    <form action="mailto:DEINE-EMAIL@example.com?subject=Formularanfrage"
+          method="post" enctype="text/plain">
 
-<form action="mailto:adresse@mail.com" 
-method="post" enctype="text/plain">
-Vorname: 
-<input type="text" name="vorname">
-<br><br>
-Nachname:
-<input type="text" name="nachname">
-</form>
-<br></br>
+        Vorname: *
+        <input type="text" name="vorname" required>
+        <br><br>
 
-<input type="radio" name="geschlecht" value="maennlich">Männlich
-<input type="radio" name="geschlecht" value="weiblich">Weiblich
-<input type="radio" name="geschlecht" value="divers">Divers<br><br>
-<input type="radio" name="geschlecht" value="keineAngabe">Keine Angabe
+        Nachname: *
+        <input type="text" name="nachname" required>
+        <br><br>
 
-<b></b>
+        Geschlecht:
+        <br>
+        <input type="radio" name="geschlecht" value="maennlich">Männlich
+        <input type="radio" name="geschlecht" value="weiblich">Weiblich
+        <input type="radio" name="geschlecht" value="divers">Divers
+        <input type="radio" name="geschlecht" value="keineAngabe" checked>Keine Angabe
+        <br><br>
 
-<input type="checkbox" name="interesse" 
-value="sport">Sport
-<input type="checkbox" name="interesse" 
-value="musik">Musik<br></br>
+        Interessen:
+        <br>
+        <input type="checkbox" name="interesse" value="sport">Sport
+        <input type="checkbox" name="interesse" value="musik">Musik
+        <input type="checkbox" name="interesse" value="technik">Technik
+        <br><br>
 
-<select name="geschlecht">
-<option value="weiblich">Weiblich</option>
-<option value="maennlich">Männlich</option>
-<option value="divers">Divers</option>
-<option value="keineAngabe" selected>Keine Angabe</option>
-</select>
-<br></br>
+        Land:
+        <select name="land">
+            <option value="oesterreich" selected>Österreich</option>
+            <option value="deutschland">Deutschland</option>
+            <option value="schweiz">Schweiz</option>
+            <option value="anderes">Anderes Land</option>
+        </select>
+        <br><br>
 
-<select name="geschlecht" multiple>
-<option value="weiblich">Weiblich</option>
-<option value="maennlich">Männlich</option>
-<option value="divers">Divers</option>
-<option value="keineAngabe" selected>Keine Angabe</option>
-</select>
+        Sprachen:
+        <br>
+        <select name="sprachen" multiple size="4">
+            <option value="deutsch">Deutsch</option>
+            <option value="englisch">Englisch</option>
+            <option value="franzoesisch">Französisch</option>
+            <option value="spanisch">Spanisch</option>
+        </select>
+        <br>
+        Für mehrere Antworten die Strg-Taste gedrückt halten.
+        <br><br>
 
+        Kommentar:
+        <br>
+        <textarea name="kommentar" rows="5" cols="40"
+                  placeholder="Fügen Sie Ihren Kommentar ein!"></textarea>
+        <br><br>
 
-<br></br>
-<input type=“hidden” name=“seite” 
-value=“form1.htm”>
-<br></br>
+        Geburtsdatum:
+        <input type="date" name="geburtsdatum">
+        <br><br>
 
-<input type="submit" 
-value="Formular abschicken">
-<input type="reset" 
-value="Formular zurücksetzen">
+        Postleitzahl: *
+        <input type="text" name="postleitzahl"
+               pattern="[0-9]{4}"
+               maxlength="4"
+               placeholder="z. B. 1010"
+               title="Bitte genau vier Ziffern eingeben."
+               required>
+        <br><br>
 
+        <input type="hidden" name="seite" value="index.html">
+
+        <input type="submit" value="Formular abschicken">
+        <input type="reset" value="Formular zurücksetzen">
+
+    </form>
 </body>
-</html>
+</html>*
